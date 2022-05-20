@@ -12,7 +12,8 @@
 - [Реализованные проверки](#watermelon-Реализованные-проверки)
 - [Запуск из терминала](#watermelon-Запуск-тестов-из-терминала)
 - [Запуск тестов в Jenkins](#watermelon-Запуск-тестов-в-Jenkins)
-- [Отчет о прохождении тестов в Allure report](#bellhop_bell-Allure-отчет)
+- [Отчет о прохождении тестов в Allure report](#bellhop_bell-Отчет-о-прохождении-тестов-в-Allure-report)
+- [Тестовая документация в Allure TestOps](#watermelon-Тестовая-документация-в-Allure-TestOps)
 - [Видео прохождения тестов](#watermelon-Видео-прохождения-тестов)
 - [Отчет в Telegram](#bellhop_bell-Отчет-в-Telegram)
 
