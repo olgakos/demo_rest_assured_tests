@@ -12,6 +12,7 @@ def allureVersion = '2.17.3',
     selenideVersion = "5.24.0",
     junitVersion = "5.8.2"
 
+//1
 allure {
     version = allureVersion
     autoconfigure = true
@@ -25,27 +26,26 @@ allure {
 
 /*
 1) локально тесты работают.
-2) но  когда я хочу запустить Аллюр, то не виду во вкладке Аллюр Серве....
+2) но  когда я хочу запустить Аллюр, то не вижу во вкладке Аллюр Серве....
 3) добавляю в Бильд Грэдл кусок кода с запуском отчета: ошибка сборки мгновенно
 Код, который я хочу добавить для получения отчета:
 */
 
-        allure {
-            report {
-                version.set(allureVersion)
-            }
-            adapter {
-                autoconfigure.set(true)
-                aspectjWeaver.set(true)
-                frameworks {
-                    junit5 {
-                        adapterVersion.set(allureVersion)
-                    }
-                }
+//2доп для запуска отчета
+allure {
+    report {
+        version.set(allureVersion)
+    }
+    adapter {
+        autoconfigure.set(true)
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set(allureVersion)
             }
         }
-
-
+    }
+}
 
 
 dependencies {
