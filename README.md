@@ -1,5 +1,5 @@
 
-# Проект по автоматизации тестирования API (demo)
+# Проект по автоматизации тестирования API (demo2)
 :earth_americas: https://reqres.in
 
 Пример API тестов из открытого источника. 
@@ -19,7 +19,6 @@
 
 
 ## :watermelon: Технологии и инструменты
-
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img src="images/logo/Idea.svg" width="50" height="50"  alt="IDEA" title="IJ IDEA"></a>  
 <a href="https://www.java.com/"><img src="images/logo/Java.svg" width="50" height="50"  alt="Java"/></a>

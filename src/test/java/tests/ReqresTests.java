@@ -68,7 +68,6 @@ public class ReqresTests extends ApiRequestSpecification {
         });
     }
 
-
     @Test
     @Tag("POST")
     @DisplayName("Авторизация")
@@ -167,7 +166,7 @@ public class ReqresTests extends ApiRequestSpecification {
         });
     }
 
-    @Disabled ("Пропущенный тест")
+    @Disabled ("Пример пропущенного теста")
     @Test
     @Tag("POST")
     @Description("Этот тест не будет запущен")
@@ -186,12 +185,10 @@ public class ReqresTests extends ApiRequestSpecification {
                 .statusCode(400)
                 .body("error", is("Missing password"));
     }
-	
-	   
 
     @Test
     @Description("Пример упавшего теста")
-    @DisplayName("Статус-код 201")
+    @DisplayName("Статус-код 201 = fail")
     @Tag("POST")
     void negativeLoginNegative() {
 
@@ -208,11 +205,9 @@ public class ReqresTests extends ApiRequestSpecification {
                 .body("error", is("Missing password"));
     }
 
-
-//?
     @Test
     @Tag("GET")
-    @Description("Проверка что полученны ожидаеные данные")
+    @Description("Проверка что полученны ожидаемые данные")
     @DisplayName("Получаем ресурсы, данные через GET")
     void singleResource() {
 
@@ -288,53 +283,4 @@ public class ReqresTests extends ApiRequestSpecification {
                 .assertThat()
                 .statusCode(200);
     }
-
-    
-	//?
-	/*
-	//тест позволяет с помощью регекса, найти и проверить конкретные данные в ответе:
-    @Test
-    @Tag("GET")
-    @Description( "Экспериментальный тест с Groovy + regex")
-    @DisplayName("Ищем все имена содержащие ue")
-    public void checkNameInListResource() {
-        step("Проверяем что LIST <RESOURCE> содержит в середине имени ue  ", () -> {
-            given()
-                    .spec(requestReqresSpec)
-                    .when()
-                    .get("/api/unknown")
-                    .then()
-                    .log().all()
-                    .statusCode(200)
-                    .body("data.findAll{it.name =~/ue/}.name.flatten()", //ищем имена
-                            hasItems("true red", "blue turquoise"))
-                    .and()
-                    .body("data.findAll{it.year =~/200/}.year.flatten()", //ищем года с 200
-                            hasItems(2001, 2003));
-        });
-    }
-
-    //example
-    @Test
-    @Tag("GET")
-    @Description("Экспериментальный тест с Groovy + regex")
-    @DisplayName("Ищем все email оканчивающиеся на @reqres.in и проверяем наличие в списке eve.holt@reqres.in")
-    public void checkNameInListResource2() {
-        step("Проверяем что LIST USERS стр1 - содержит емейл eve.holt@reqres.in", () -> {
-            given()
-                    .spec(requestReqresSpec)
-                    .when()
-                    .get("/api/users?page=1")
-                    .then()
-                    .log().all()
-                    .statusCode(200)
-                    //найти все емейлы - которые неважно с чего начинаются - но заканчивается reqres.in
-                    //- он собирает весь список всех емейлов: findAll{it.email =~/.*?@reqres.in/}
-                    //- находит поле .email - flatten()
-                    //далее в получившемся списке находим hasItem - наш емейл: eve.holt@reqres.in
-                    .body("data.findAll{it.email =~/.*?@reqres.in/}.email.flatten()",
-                            hasItem("eve.holt@reqres.in"));
-        });
-    }
-	*/
 }

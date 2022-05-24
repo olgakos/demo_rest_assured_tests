@@ -6,7 +6,10 @@ import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
 
@@ -23,19 +26,18 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
     }
 
-	
-	@AfterEach
+    @AfterEach
     @DisplayName("Формирование артефактов тестирования")
     void addAttachment() {
         Attach.screenshotAs("Last screenshot");
-		Attach.pageSource(); //3
-		Attach.browserConsoleLogs();
-        Attach.addVideo(); //2  
+        Attach.pageSource(); //3
+        Attach.browserConsoleLogs();
+        Attach.addVideo(); //2
+        closeWebDriver(); // Закрыть браузер после записи видео
     }
 
-    @AfterEach
-    @DisplayName("Закрыть браузер после записи видео")
-    void closeBrowser() { closeWebDriver();}
 }
+
+
 
 
