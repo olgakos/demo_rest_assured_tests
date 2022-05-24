@@ -117,7 +117,7 @@ public class ReqresTests extends ApiRequestSpecification {
 
     @Test
     @Tag("POST")
-    @DisplayName("Корректная рега пользователя")
+    @DisplayName("Корректная регистрация нового пользователя")
     void successfulRegistrationUser() {
 
         ForRegistrationUserRequest request = new ForRegistrationUserRequest(); //модель: registration/Lombok
